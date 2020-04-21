@@ -1,8 +1,8 @@
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
-const axios = require("axios");
 const fs = require("fs");
-const writeFile = util.promisify(fs.writeFile);
+const writeFile = require('util.promisify');
+const axios = require("axios");
 
 inquirer.prompt([
     {
@@ -63,10 +63,17 @@ inquirer.prompt([
 
     {
         type: "input",
+        name: "credits",
+        message: "Please list your collaborators, if any: "
+    },
+
+    {
+        type: "input",
         name: "questions",
         message: "Pleaes enter an email for user questions: "
     }
 ]).then(function(answers){
+
     const readMe = generateMarkdown(answers)
     
     return writeFile("ReadMe.MD", readMe);

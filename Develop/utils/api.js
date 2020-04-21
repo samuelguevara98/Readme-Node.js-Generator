@@ -9,7 +9,14 @@ const api = {
     }).then(function({username}){
       const query = `https://api.github.com/users/${username}`;
 
-    })
+      axios.get(query).then(function(res) {
+
+        const email = res.data.email
+        console.log(email)
+        const profile = res.data.avatar_url
+        console.log(profile)
+      });
+    });
   }
 };
 

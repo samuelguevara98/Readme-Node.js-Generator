@@ -1,6 +1,6 @@
 function generateMarkdown(answers) {
   return 
-`# ${data.title} By: ${answers.gitUsername}
+`# ${data.ProjTitle} By: ${answers.gitUsername}
 
 ## Description
 ${answers.projDescription}
@@ -21,14 +21,22 @@ How to run tests: ${answers.testing}
 ## Usage
 ${answers.usage}
 
-## Credits
+## Contributing
 ${answers.contributing}
 
 ## License
-![License: ]
-`;
-}
+${answers.licensing}
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+
+## Deployed URL
+${answers.projURL}
+
+## Author(s)
+${answers.gitUsername}
+${answers.credits}
+## Questions?
+Contact ${answers.gitUsername} at ${answers.questions}
+  `;
+  }
 
 module.exports = generateMarkdown;
-
-${answers.}
